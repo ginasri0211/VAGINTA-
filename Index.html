@@ -1,1 +1,2183 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaginta - Toko Tas Trendy & Elegan Tasikmalaya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter & Playfair Display) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        dark: {
+                            800: '#1e1b18',
+                            900: '#12100e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Hide scrollbar for clean UI in horizontal lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
 
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-800 via-brand-700 to-brand-900 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-inner flex justify-between items-center px-4 md:px-12">
+        <div class="hidden sm:flex items-center space-x-2">
+            <i class="fa-regular font-bold fa-clock text-amber-300"></i>
+            <span>Jam Operasional: <strong>08.00 - 21.00 WIB</strong></span>
+        </div>
+        <div class="w-full sm:w-auto flex justify-center items-center space-x-3 text-xs">
+            <span class="bg-white/20 px-2.5 py-0.5 rounded-full text-white font-medium">
+                <i class="fa-solid fa-location-dot text-rose-300 mr-1"></i> Bungursari, Tasikmalaya
+            </span>
+            <span>|</span>
+            <a href="https://wa.me/6282127938115" target="_blank" class="hover:underline flex items-center gap-1 text-emerald-300 font-semibold">
+                <i class="fa-brands fa-whatsapp text-sm"></i> 082127938115
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#beranda" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-gray-900 group-hover:text-brand-700 transition-colors">
+                        VAGINTA
+                    </span>
+                    <span class="block text-[10px] tracking-widest text-brand-600 font-semibold uppercase -mt-1">
+                        Luxury & Casual Bags
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-700">
+                <a href="#beranda" class="hover:text-brand-600 transition-colors py-1">Beranda</a>
+                <a href="#etalase" class="hover:text-brand-600 transition-colors py-1">Etalase Produk</a>
+                <a href="#tambah-produk" class="hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 text-brand-700 font-semibold bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    <i class="fa-solid fa-plus-circle text-brand-600"></i> Tambah Produk
+                </a>
+                <a href="#tentang" class="hover:text-brand-600 transition-colors py-1">Tentang Toko</a>
+                <a href="#lokasi" class="hover:text-brand-600 transition-colors py-1">Lokasi & Kontak</a>
+            </nav>
+
+            <!-- Quick Action / WA Button -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20bertanya%20mengenai%20produk%20tas" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs px-4 py-2.5 rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat CS Store</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#beranda" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Beranda</a>
+            <a href="#etalase" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Etalase Produk</a>
+            <a href="#tambah-produk" class="block py-2 text-brand-700 hover:text-brand-800 font-semibold border-b border-gray-50 flex items-center gap-2">
+                <i class="fa-solid fa-plus-circle"></i> Tambah Produk Baru
+            </a>
+            <a href="#tentang" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Tentang Toko</a>
+            <a href="#lokasi" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Lokasi & Kontak</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20bertanya" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm py-2.5 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp 082127938115</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative bg-gradient-to-br from-rose-50 via-white to-brand-50 py-12 md:py-20 overflow-hidden border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-800 font-semibold text-xs tracking-wide uppercase">
+                        <i class="fa-solid fa-sparkles text-brand-600"></i> Koleksi Tas Terbaru 2026
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Tampil Gaya & Elegan Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 to-amber-600">Vaginta Store</span>
+                    </h1>
+                    
+                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Pusat jual beli tas selempang, totebag, backpack, hingga handbag mewah kualitas terbaik di Tasikmalaya. Pilih tas impianmu, pesan mudah via WhatsApp atau pesan langsung secara praktis!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#etalase" class="w-full sm:w-auto bg-gradient-to-r from-brand-600 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>Lihat Katalog Produk</span>
+                        </a>
+                        <a href="#tambah-produk" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-plus text-brand-600"></i>
+                            <span>Tambah Stok Baru</span>
+                        </a>
+                    </div>
+
+                    <!-- Store Highlights -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-200/80 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">100%</span>
+                            <span class="text-xs text-gray-500 font-medium">Original & Quality</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">08-21</span>
+                            <span class="text-xs text-gray-500 font-medium">Buka Setiap Hari</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">Fast</span>
+                            <span class="text-xs text-gray-500 font-medium">Respon WA & COD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Featured Image Banner -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Vaginta Modern Bag Collection" class="w-full h-96 object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                                <span class="bg-amber-400 text-gray-900 font-bold text-xs px-2.5 py-1 rounded-md mb-2 inline-block">Best Seller</span>
+                                <h3 class="font-serif text-xl font-bold">Vaginta Exclusive Handbag</h3>
+                                <p class="text-xs text-gray-200 mt-1">Ready di toko Bungursari Tasikmalaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: ETALASE PRODUK -->
+        <section id="etalase" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-gray-200 pb-5">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Katalog Pilihan</span>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mt-1">Etalase Produk Tas</h2>
+                    <p class="text-sm text-gray-500 mt-1">Temukan koleksi tas kesukaanmu, siap kirim atau pesan via WhatsApp.</p>
+                </div>
+
+                <!-- Filter & Search Bar Controls -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <!-- Search Input -->
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" id="searchInput" placeholder="Cari nama tas..." class="pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 w-full sm:w-52 shadow-sm">
+                </div>
+
+                <!-- Stock Filter -->
+                <select id="stockStatusFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                    <option value="all">Semua Status Stok</option>
+                    <option value="available">Stok Tersedia (>0)</option>
+                    <option value="low">Stok Menipis (≤3)</option>
+                    <option value="empty">Stok Habis (0)</option>
+                </select>
+
+                <!-- Color Filter -->
+                <select id="colorFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                    <option value="all">Semua Warna</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Cokelat">Cokelat</option>
+                    <option value="Beige">Beige / Cream</option>
+                    <option value="Merah">Merah / Maroon</option>
+                    <option value="Lainnya">Warna Lain</option>
+                </select>
+
+                <!-- Quick Action: Clear Out of Stock Products -->
+                <button onclick="clearOutOfStockProducts()" title="Hapus semua barang dengan stok 0 dari etalase" class="bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-semibold px-3 py-2 rounded-xl text-sm transition flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap">
+                    <i class="fa-solid fa-trash-can text-rose-600"></i>
+                    <span class="hidden lg:inline">Hapus Stok Habis</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid Container -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Products will be dynamically populated via JavaScript -->
+        </div>
+
+                    <!-- Color Filter -->
+                    <select id="colorFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                        <option value="all">Semua Warna</option>
+                        <option value="Hitam">Hitam</option>
+                        <option value="Cokelat">Cokelat</option>
+                        <option value="Beige">Beige / Cream</option>
+                        <option value="Merah">Merah / Maroon</option>
+                        <option value="Lainnya">Warna Lain</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid Container -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Products will be dynamically populated via JavaScript -->
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="emptyProductState" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 shadow-sm">
+                <i class="fa-solid fa-box-open text-5xl text-gray-300 mb-3"></i>
+                <h3 class="text-lg font-semibold text-gray-700">Tidak ada produk ditemukan</h3>
+                <p class="text-sm text-gray-500 mt-1">Coba sesuaikan kata kunci pencarian atau filter warna Anda.</p>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: FORM TAMBAH PRODUK BARU -->
+        <section id="tambah-produk" class="scroll-mt-24">
+            <div class="bg-gradient-to-br from-white to-brand-50/30 rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-100 rounded-full blur-2xl opacity-60 pointer-events-none"></div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 mb-3">
+                            <i class="fa-solid fa-square-plus text-xl"></i>
+                        </div>
+                        <h2 class="font-serif text-3xl font-bold text-gray-900">Tambah Produk Baru</h2>
+                        <p class="text-sm text-gray-600 mt-1">Masukkan rincian tas untuk langsung menambahkannya ke Etalase Toko Vaginta.</p>
+                    </div>
+
+                    <form id="addProductForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Nama Produk -->
+                            <div class="sm:col-span-2">
+                                <label for="prodName" class="block text-sm font-semibold text-gray-700 mb-1.5">Nama Tas / Produk <span class="text-rose-500">*</span></label>
+                                <input type="text" id="prodName" required placeholder="Contoh: Vaginta Handbag Elegant Black" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Harga Produk -->
+                            <div>
+                                <label for="prodPrice" class="block text-sm font-semibold text-gray-700 mb-1.5">Harga Produk (Rp) <span class="text-rose-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 font-medium text-sm">Rp</span>
+                                    <input type="number" id="prodPrice" min="1000" required placeholder="250000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                </div>
+                            </div>
+
+                            <!-- Warna Produk -->
+                            <div>
+                                <label for="prodColor" class="block text-sm font-semibold text-gray-700 mb-1.5">Warna Produk <span class="text-rose-500">*</span></label>
+                                <input type="text" id="prodColor" required placeholder="Contoh: Hitam, Cokelat, Nude" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Stok Produk -->
+                            <div>
+                                <label for="prodStock" class="block text-sm font-semibold text-gray-700 mb-1.5">Jumlah Stok <span class="text-rose-500">*</span></label>
+                                <input type="number" id="prodStock" min="1" required value="10" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Deskripsi Singkat -->
+                            <div>
+                                <label for="prodCategory" class="block text-sm font-semibold text-gray-700 mb-1.5">Kategori Tas</label>
+                                <select id="prodCategory" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                    <option value="Tas Selempang">Tas Selempang (Sling Bag)</option>
+                                    <option value="Totebag">Totebag Modern</option>
+                                    <option value="Handbag">Handbag Elegant</option>
+                                    <option value="Backpack">Backpack / Ransel</option>
+                                    <option value="Luxury">Luxury Bag</option>
+                                    <option value="Clutch">Clutch & Wallet</option>
+                                </select>
+                            </div>
+
+                            <!-- Link Gambar URL -->
+                            <div class="sm:col-span-2">
+                                <label for="prodImage" class="block text-sm font-semibold text-gray-700 mb-1.5">URL Foto Tas <span class="text-rose-500">*</span></label>
+                                <input type="url" id="prodImage" required placeholder="https://images.unsplash.com/photo-..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                
+                                <!-- Preset Photos Helper -->
+                                <div class="mt-3">
+                                    <span class="text-xs font-semibold text-gray-500 block mb-2">Atau pilih dari preset foto tas Unsplash berikut:</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👜 Leather Tote
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👛 Red Clutch/Sling
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            🎒 Chic Backpack
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👝 Luxury Shoulder
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 text-center">
+                            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-brand-600 via-brand-700 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-bold px-10 py-3.5 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 transition duration-300">
+                                <i class="fa-solid fa-check-circle mr-2"></i> Simpan & Simulasikan Tampil Produk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 3: TENTANG TOKO VAGINTA -->
+        <section id="tentang" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-sm">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Tentang Kami</span>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mt-1 mb-4">Vaginta Bag Store</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                        <strong>Vaginta</strong> merupakan pusat fashion tas pilihan di Tasikmalaya yang melayani jual beli tas wanita & pria dengan berbagai tren terkini. Kami mengutamakan kualitas bahan, kerapian jahitan, serta desain yang stylish untuk menunjang penampilan harian, acara formal, maupun hangout.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        Kami siap melayani pembelian secara langsung di toko fisik kami di Tasikmalaya, maupun pengiriman daring melalui layanan pesan praktis via WhatsApp dan kemudahan transaksi digital.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
+                            <i class="fa-solid fa-store text-brand-600 text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Toko Fisik Luring</h4>
+                            <p class="text-xs text-gray-500">Bisa langsung datang & cek barang</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-100">
+                            <i class="fa-solid fa-wallet text-amber-600 text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Pembayaran Mudah</h4>
+                            <p class="text-xs text-gray-500">Cash, G-Pay / GoPay, & DANA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Suasana Toko Tas Vaginta" class="rounded-2xl shadow-md w-full h-80 object-cover">
+                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden sm:flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-gray-900">Garansi Kualitas</span>
+                            <span class="text-[11px] text-gray-500">Pengecekan sebelum dikirim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 4: LOKASI & KONTAK TOKO -->
+        <section id="lokasi" class="scroll-mt-24">
+            <div class="bg-dark-800 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div>
+                            <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Informasi Kontak & Alamat</span>
+                            <h2 class="font-serif text-3xl font-bold mt-1">Kunjungi Toko Vaginta</h2>
+                            <p class="text-gray-400 text-sm mt-2">Kami menyambut kedatangan Anda untuk melihat langsung koleksi tas berkualitas tinggi di toko kami.</p>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <!-- Alamat -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-brand-600/30 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-map-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Alamat Lengkap Toko</h4>
+                                    <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">
+                                        Jalan Bantarsari, Kecamatan Bungursari, Kota Tasikmalaya, Jawa Barat.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Jam Operasional -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-amber-600/30 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-regular fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Jam Operasional</h4>
+                                    <p class="text-amber-300 font-medium text-xs mt-0.5">
+                                        Buka Setiap Hari: 08.00 - 21.00 WIB
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Phone & WA -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">WhatsApp / Telepon</h4>
+                                    <p class="text-emerald-400 font-bold text-sm mt-0.5">
+                                        082127938115
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20menanyakan%20lokasi%20toko" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl transition text-sm">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Hubungi CS via WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Map Card Graphic / Simulation -->
+                    <div class="lg:col-span-6 bg-dark-900 p-5 rounded-2xl border border-white/10 text-center relative">
+                        <div class="h-64 rounded-xl bg-gray-800 relative overflow-hidden flex flex-col items-center justify-center p-4 text-center">
+                            <!-- Background Map Aesthetic Grid -->
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            
+                            <div class="relative z-10 space-y-3">
+                                <div class="w-14 h-14 bg-rose-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg animate-bounce">
+                                    <i class="fa-solid fa-shop text-2xl"></i>
+                                </div>
+                                <h3 class="font-serif text-lg font-bold text-white">Vaginta Store Tasikmalaya</h3>
+                                <p class="text-xs text-gray-400 max-w-xs mx-auto">Jl. Bantarsari, Kec. Bungursari, Kota Tasikmalaya, Jawa Barat</p>
+                                
+                                <a href="https://maps.google.com/?q=Bungursari+Tasikmalaya" target="_blank" class="inline-block text-xs bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg border border-white/20 transition mt-2">
+                                    <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 text-sm mt-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-3">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider">VAGINTA</span>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Toko tas terpercaya dengan beragam koleksi fashion trendy, elegan, dan harga bersahabat di Kota Tasikmalaya.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Menu Pintas</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#etalase" class="hover:text-white transition">Etalase Produk</a></li>
+                        <li><a href="#tambah-produk" class="hover:text-white transition">Tambah Produk Baru</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Tentang Toko</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Metode Pembayaran</h4>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="bg-gray-800 text-emerald-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-money-bill-wave mr-1"></i> Cash / COD</span>
+                        <span class="bg-gray-800 text-sky-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-wallet mr-1"></i> G-Pay / GoPay</span>
+                        <span class="bg-gray-800 text-blue-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-credit-card mr-1"></i> DANA</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Layanan Pelanggan</h4>
+                    <p class="text-xs text-gray-400 mb-2">Punya pertanyaan seputar tas & pesanan?</p>
+                    <a href="https://wa.me/6282127938115" target="_blank" class="text-emerald-400 hover:underline font-bold text-sm block">
+                        <i class="fa-brands fa-whatsapp text-base mr-1"></i> 082127938115
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 Vaginta Store Tasikmalaya. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL SIMULASI PEMBAYARAN -->
+    <div id="paymentModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8 transform transition-all">
+            
+            <!-- Close Modal Button -->
+            <button onclick="closePaymentModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 bg-gray-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mx-auto mb-2">
+                    <i class="fa-solid fa-cash-register text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900">Simulasi Pembayaran</h3>
+                <p class="text-xs text-gray-500">Toko Vaginta Tasikmalaya</p>
+            </div>
+
+            <!-- Detail Ringkasan Produk Modal -->
+            <div id="modalProductDetails" class="bg-gray-50 p-4 rounded-2xl border border-gray-200 mb-6 flex gap-4 items-center">
+                <img id="modalProdImg" src="" alt="" class="w-16 h-16 object-cover rounded-xl border border-gray-200">
+                <div class="flex-grow">
+                    <h4 id="modalProdName" class="font-bold text-sm text-gray-900 line-clamp-1">Nama Produk</h4>
+                    <p id="modalProdMeta" class="text-xs text-gray-500">Warna: - | Stok: -</p>
+                    <div class="text-brand-700 font-bold text-sm mt-1" id="modalProdPrice">Rp 0</div>
+                </div>
+            </div>
+
+            <!-- Pilih Metode Pembayaran -->
+            <div class="space-y-4 mb-6">
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">Pilih Metode Pembayaran</label>
+                
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- Cash / Transfer -->
+                    <button type="button" onclick="selectPaymentMethod('cash')" id="btnMethodCash" class="pay-method-btn p-3 rounded-xl border-2 border-brand-600 bg-brand-50 text-brand-800 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-money-bill-wave text-lg"></i>
+                        <span class="text-xs font-bold">Cash / COD</span>
+                    </button>
+
+                    <button type="button" onclick="selectPaymentMethod('gpay')" id="btnMethodGpay" class="pay-method-btn p-3 rounded-xl border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-wallet text-lg text-sky-600"></i>
+                        <span class="text-xs font-bold">G-Pay / GoPay</span>
+                    </button>
+
+                    <button type="button" onclick="selectPaymentMethod('dana')" id="btnMethodDana" class="pay-method-btn p-3 rounded-xl border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-mobile-screen text-lg text-blue-600"></i>
+                        <span class="text-xs font-bold">DANA</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Box Instruksi Pembayaran Disesuaikan Dynamic -->
+            <div id="paymentInstructions" class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-xs text-amber-900 mb-6">
+                <div id="instructionContent">
+                    <!-- Dynamic Instruction text populated via JS -->
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2">
+                <button onclick="processSimulatedPayment()" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Konfirmasi Simulasi Pembayaran</span>
+                </button>
+                <button onclick="closePaymentModal()" class="w-full text-xs text-gray-500 hover:text-gray-800 py-2">
+                    Batal
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MODAL RECEIPT / STRUK HASIL BAYAR -->
+    <div id="receiptModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative text-center">
+            
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 text-2xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-gray-900">Pembayaran Sukses!</h3>
+            <p class="text-xs text-gray-500 mt-1">Simulasi transaksi berhasil diproses.</p>
+
+            <div class="bg-gray-50 border border-dashed border-gray-300 rounded-2xl p-4 my-5 text-left text-xs space-y-2 font-mono">
+                <div class="text-center font-bold font-sans border-b border-gray-200 pb-2 text-gray-800">
+                    STORE VAGINTA TASIKMALAYA
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">ID Trx:</span>
+                    <span id="rcpId" class="font-bold">VG-98115</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Produk:</span>
+                    <span id="rcpName" class="font-bold text-right truncate max-w-[150px]">Tas</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Metode:</span>
+                    <span id="rcpMethod" class="font-bold text-emerald-600">Cash / COD</span>
+                </div>
+                <div class="flex justify-between border-t border-gray-200 pt-2 text-sm font-bold font-sans text-gray-900">
+                    <span>Total Bayar:</span>
+                    <span id="rcpTotal" class="text-brand-700">Rp 0</span>
+                </div>
+            </div>
+
+            <p class="text-[11px] text-gray-500 mb-5">
+                Struk ini merupakan bukti simulasi. Anda juga dapat melanjutkan konfirmasi langsung ke pengelola toko via WhatsApp.
+            </p>
+
+            <div class="space-y-2">
+                <a id="rcpWaBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl block text-xs shadow transition">
+                    <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Kirim Bukti ke WhatsApp Toko
+                </a>
+                <button onclick="closeReceiptModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2.5 rounded-xl text-xs transition">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Produk Default Awal Toko Vaginta
+        let products = [
+            {
+                id: 1,
+                name: "Vaginta Luxury Sling Bag",
+                price: 245000,
+                color: "Hitam",
+                stock: 8,
+                category: "Tas Selempang",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                name: "Vaginta Classy Leather Handbag",
+                price: 320000,
+                color: "Cokelat",
+                stock: 2, // Stok menipis
+                category: "Handbag",
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                name: "Vaginta Urban Everyday Totebag",
+                price: 175000,
+                color: "Beige",
+                stock: 0, // Stok habis
+                category: "Totebag",
+                image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                name: "Vaginta Glamour Party Clutch",
+                price: 210000,
+                color: "Merah",
+                stock: 4,
+                category: "Clutch",
+                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                name: "Vaginta Aesthetic Casual Backpack",
+                price: 285000,
+                color: "Hitam",
+                stock: 6,
+                category: "Backpack",
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 6,
+                name: "Vaginta Minimalist Nude Shoulder Bag",
+                price: 195000,
+                color: "Beige",
+                stock: 0, // Stok habis
+                category: "Tas Selempang",
+                image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Global Variable untuk Active Selected Product untuk Modal
+        let activeProductForPayment = null;
+        let selectedMethod = 'cash';
+
+        // Format angka ke Rupiah
+        function formatRupiah(amount) {
+            return 'Rp ' + amount.toLocaleString('id-ID');
+        }
+
+        // Render Etalase Produk
+        function renderProducts(filteredProducts = null) {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyProductState');
+            const dataToRender = filteredProducts || products;
+
+            grid.innerHTML = '';
+
+            if (dataToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                
+                dataToRender.forEach(product => {
+                    const isOutOfStock = product.stock <= 0;
+                    const isLowStock = product.stock > 0 && product.stock <= 3;
+
+                    // Badge Keterangan Stok
+                    let stockBadge = '';
+                    if (isOutOfStock) {
+                        stockBadge = `<span class="bg-rose-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-circle-xmark"></i> Stok Habis (0)
+                        </span>`;
+                    } else if (isLowStock) {
+                        stockBadge = `<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 animate-pulse">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Stok Menipis (${product.stock})
+                        </span>`;
+                    } else {
+                        stockBadge = `<span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> Stok Ready (${product.stock})
+                        </span>`;
+                    }
+
+                    const waText = encodeURIComponent(`Halo Vaginta Store, saya berminat memesan tas:\n\n*Nama Produk:* ${product.name}\n*Warna:* ${product.color}\n*Harga:* ${formatRupiah(product.price)}\n\nApakah stok masih tersedia?`);
+                    const waLink = `https://wa.me/6282127938115?text=${waText}`;
+
+                    const cardHtml = `
+                        <div class="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group relative ${isOutOfStock ? 'opacity-80' : ''}">
+                            
+                            <!-- Delete Product Button (Quick Manage) -->
+                            <button onclick="deleteProduct(${product.id})" title="Hapus produk dari etalase" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-red-600/90 hover:bg-red-700 text-white flex items-center justify-center shadow-md transition transform hover:scale-110">
+                                <i class="fa-solid fa-trash-can text-xs"></i>
+                            </button>
+
+                            <!-- Image Container -->
+                            <div class="relative h-64 overflow-hidden bg-gray-100">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${isOutOfStock ? 'grayscale opacity-75' : ''}" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'">
+                                
+                                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">
+                                    <i class="fa-solid fa-tag text-brand-600 mr-1"></i> ${product.category || 'Tas Premium'}
+                                </div>
+
+                                <div class="absolute bottom-3 left-3">
+                                    ${stockBadge}
+                                </div>
+                            </div>
+
+                            <!-- Content Info -->
+                            <div class="p-5 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                                        <span class="flex items-center gap-1 font-medium text-gray-600">
+                                            <span class="w-2.5 h-2.5 rounded-full inline-block" style="background-color: ${getColorHex(product.color)}"></span>
+                                            Warna: ${product.color}
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif font-bold text-lg text-gray-900 group-hover:text-brand-700 transition-colors line-clamp-2">
+                                        ${product.name}
+                                    </h3>
+                                </div>
+
+                                <!-- Quick Stock Quantity Controls -->
+                                <div class="mt-3 p-2.5 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-gray-600">Kelola Stok:</span>
+                                    <div class="flex items-center gap-2">
+                                        <button onclick="updateStock(${product.id}, -1)" class="w-7 h-7 rounded-lg bg-white border border-gray-300 text-gray-700 font-bold hover:bg-rose-50 hover:text-rose-600 hover:border-rose-300 flex items-center justify-center transition">
+                                            -
+                                        </button>
+                                        <span class="font-bold text-gray-800 w-6 text-center">${product.stock}</span>
+                                        <button onclick="updateStock(${product.id}, 1)" class="w-7 h-7 rounded-lg bg-white border border-gray-300 text-gray-700 font-bold hover:bg-emerald-50 hover:text-emerald-600 hover:border-emerald-300 flex items-center justify-center transition">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <div class="font-bold text-xl text-brand-800 mb-3">
+                                        ${formatRupiah(product.price)}
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="grid grid-cols-2 gap-2">
+                                        ${isOutOfStock ? `
+                                            <button disabled class="bg-gray-200 text-gray-400 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-not-allowed">
+                                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                                <span>Stok Habis</span>
+                                            </button>
+                                            <button disabled class="bg-gray-100 text-gray-400 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-not-allowed">
+                                                <i class="fa-solid fa-ban"></i>
+                                                <span>Tidak Tersedia</span>
+                                            </button>
+                                        ` : `
+                                            <a href="${waLink}" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                                <span>Order WA</span>
+                                            </a>
+                                            <button onclick="openPaymentModal(${product.id})" class="bg-brand-50 hover:bg-brand-100 text-brand-800 border border-brand-200 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                                                <i class="fa-solid fa-credit-card text-brand-600"></i>
+                                                <span>Simulasi Bayar</span>
+                                            </button>
+                                        `}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += cardHtml;
+                });
+            }
+        }
+
+        // Quick Stock Update (+/-)
+        function updateStock(productId, change) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.stock = Math.max(0, product.stock + change);
+                filterProducts();
+            }
+        }
+
+        // Delete Single Product
+        function deleteProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            if (confirm(`Apakah Anda yakin ingin menghapus produk "${product.name}" dari etalase?`)) {
+                products = products.filter(p => p.id !== productId);
+                filterProducts();
+            }
+        }
+
+        // Clear All Out Of Stock Products
+        function clearOutOfStockProducts() {
+            const outOfStockCount = products.filter(p => p.stock === 0).length;
+            if (outOfStockCount === 0) {
+                alert('Saat ini tidak ada produk dengan stok habis (0).');
+                return;
+            }
+
+            if (confirm(`Ditemukan ${outOfStockCount} produk dengan stok habis (0). Hapus semua produk tersebut dari etalase?`)) {
+                products = products.filter(p => p.stock > 0);
+                filterProducts();
+            }
+        }
+
+        // Color Helper Method for Badge Dots
+        function getColorHex(colorName) {
+            const lower = colorName.toLowerCase();
+            if (lower.includes('hitam')) return '#18181b';
+            if (lower.includes('cokelat') || lower.includes('brown')) return '#854d0e';
+            if (lower.includes('beige') || lower.includes('cream')) return '#fde68a';
+            if (lower.includes('merah') || lower.includes('maroon')) return '#dc2626';
+            if (lower.includes('biru')) return '#2563eb';
+            return '#a1a1aa';
+        }
+
+        // Filter and Search Handler
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedColor = document.getElementById('colorFilter').value.toLowerCase();
+            const stockFilter = document.getElementById('stockStatusFilter').value;
+
+            const filtered = products.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchTerm) || p.color.toLowerCase().includes(searchTerm);
+                
+                let matchesColor = true;
+                if (selectedColor !== 'all') {
+                    matchesColor = p.color.toLowerCase().includes(selectedColor);
+                }
+
+                let matchesStock = true;
+                if (stockFilter === 'available') {
+                    matchesStock = p.stock > 0;
+                } else if (stockFilter === 'low') {
+                    matchesStock = p.stock > 0 && p.stock <= 3;
+                } else if (stockFilter === 'empty') {
+                    matchesStock = p.stock === 0;
+                }
+
+                return matchesSearch && matchesColor && matchesStock;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // Function Preset Image URL
+        function setPresetImg(url) {
+            document.getElementById('prodImage').value = url;
+        }
+
+        // Form Tambah Produk Baru
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('prodName').value;
+            const price = parseInt(document.getElementById('prodPrice').value);
+            const color = document.getElementById('prodColor').value;
+            const stock = parseInt(document.getElementById('prodStock').value);
+            const category = document.getElementById('prodCategory').value;
+            const image = document.getElementById('prodImage').value;
+
+            const newProduct = {
+                id: Date.now(),
+                name,
+                price,
+                color,
+                stock,
+                category,
+                image
+            };
+
+            // Tambahkan di awal array
+            products.unshift(newProduct);
+            
+            // Reset Filter ke All agar produk baru terlihat
+            document.getElementById('stockStatusFilter').value = 'all';
+            document.getElementById('colorFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            
+            renderProducts();
+
+            // Reset Form & Scroll ke Etalase
+            this.reset();
+            alert(`Produk "${name}" telah berhasil ditambahkan ke etalase Toko Vaginta!`);
+            document.getElementById('etalase').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+        // MODAL SIMULASI PEMBAYARAN LOGIC
+        function openPaymentModal(productId) {
+            activeProductForPayment = products.find(p => p.id === productId);
+            if (!activeProductForPayment) return;
+
+            document.getElementById('modalProdImg').src = activeProductForPayment.image;
+            document.getElementById('modalProdName').innerText = activeProductForPayment.name;
+            document.getElementById('modalProdMeta').innerText = `Warna: ${activeProductForPayment.color} | Stok: ${activeProductForPayment.stock}`;
+            document.getElementById('modalProdPrice').innerText = formatRupiah(activeProductForPayment.price);
+
+            selectPaymentMethod('cash');
+
+            document.getElementById('paymentModal').classList.remove('hidden');
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.add('hidden');
+        }
+
+        function selectPaymentMethod(method) {
+            selectedMethod = method;
+
+            // Reset Styles
+            document.querySelectorAll('.pay-method-btn').forEach(btn => {
+                btn.classList.remove('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                btn.classList.add('border-gray-200', 'text-gray-700');
+            });
+
+            const instrBox = document.getElementById('instructionContent');
+
+            if (method === 'cash') {
+                document.getElementById('btnMethodCash').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-amber-900 mb-1"><i class="fa-solid fa-store mr-1"></i> Pembayaran Cash / Bayar di Toko (COD)</h5>
+                    <p class="leading-relaxed">Silakan datang langsung ke toko fisik Vaginta di <strong>Jalan Bantarsari, Kec. Bungursari, Kota Tasikmalaya</strong> atau bayar saat COD ditempat.</p>
+                `;
+            } else if (method === 'gpay') {
+                document.getElementById('btnMethodGpay').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-sky-900 mb-1"><i class="fa-solid fa-wallet mr-1"></i> Transfer via G-Pay / GoPay</h5>
+                    <p class="leading-relaxed">Nomor E-Wallet GoPay / G-Pay: <strong class="text-sky-700 text-sm">082127938115</strong></p>
+                    <p class="text-[11px] text-gray-600 mt-1">Atas Nama: <strong>Vaginta Store Tasikmalaya</strong></p>
+                `;
+            } else if (method === 'dana') {
+                document.getElementById('btnMethodDana').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-blue-900 mb-1"><i class="fa-solid fa-mobile-screen mr-1"></i> Transfer via DANA</h5>
+                    <p class="leading-relaxed">Nomor Akun DANA: <strong class="text-blue-700 text-sm">082127938115</strong></p>
+                    <p class="text-[11px] text-gray-600 mt-1">Atas Nama: <strong>Vaginta Store Tasikmalaya</strong></p>
+                `;
+            }
+        }
+
+        function processSimulatedPayment() {
+            if (!activeProductForPayment) return;
+
+            const randomTrxId = 'VG-' + Math.floor(10000 + Math.random() * 90000);
+            
+            document.getElementById('rcpId').innerText = randomTrxId;
+            document.getElementById('rcpName').innerText = activeProductForPayment.name;
+            document.getElementById('rcpTotal').innerText = formatRupiah(activeProductForPayment.price);
+            
+            let methodLabel = 'Cash / Bayar di Toko';
+            if (selectedMethod === 'gpay') methodLabel = 'G-Pay / GoPay (082127938115)';
+            if (selectedMethod === 'dana') methodLabel = 'DANA (082127938115)';
+            document.getElementById('rcpMethod').innerText = methodLabel;
+
+            // WhatsApp link untuk kirim struk
+            const waMsg = encodeURIComponent(`Halo Vaginta Store, saya telah melakukan simulasi pembayaran:\n\n*ID Transaksi:* ${randomTrxId}\n*Produk:* ${activeProductForPayment.name}\n*Warna:* ${activeProductForPayment.color}\n*Total:* ${formatRupiah(activeProductForPayment.price)}\n*Metode:* ${methodLabel}\n\nMohon konfirmasinya. Terima kasih!`);
+            document.getElementById('rcpWaBtn').href = `https://wa.me/6282127938115?text=${waMsg}`;
+
+            closePaymentModal();
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+
+        // Event Listeners Initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render Initial Products
+            renderProducts();
+
+            // Search & Filter Listeners
+            document.getElementById('searchInput').addEventListener('input', filterProducts);
+            document.getElementById('colorFilter').addEventListener('change', filterProducts);
+            document.getElementById('stockStatusFilter').addEventListener('change', filterProducts);
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking nav items
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script> <!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaginta - Toko Tas Trendy & Elegan Tasikmalaya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter & Playfair Display) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        dark: {
+                            800: '#1e1b18',
+                            900: '#12100e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Hide scrollbar for clean UI in horizontal lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-800 via-brand-700 to-brand-900 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-inner flex justify-between items-center px-4 md:px-12">
+        <div class="hidden sm:flex items-center space-x-2">
+            <i class="fa-regular font-bold fa-clock text-amber-300"></i>
+            <span>Jam Operasional: <strong>08.00 - 21.00 WIB</strong></span>
+        </div>
+        <div class="w-full sm:w-auto flex justify-center items-center space-x-3 text-xs">
+            <span class="bg-white/20 px-2.5 py-0.5 rounded-full text-white font-medium">
+                <i class="fa-solid fa-location-dot text-rose-300 mr-1"></i> Bungursari, Tasikmalaya
+            </span>
+            <span>|</span>
+            <a href="https://wa.me/6282127938115" target="_blank" class="hover:underline flex items-center gap-1 text-emerald-300 font-semibold">
+                <i class="fa-brands fa-whatsapp text-sm"></i> 082127938115
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#beranda" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-gray-900 group-hover:text-brand-700 transition-colors">
+                        VAGINTA
+                    </span>
+                    <span class="block text-[10px] tracking-widest text-brand-600 font-semibold uppercase -mt-1">
+                        Luxury & Casual Bags
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-700">
+                <a href="#beranda" class="hover:text-brand-600 transition-colors py-1">Beranda</a>
+                <a href="#etalase" class="hover:text-brand-600 transition-colors py-1">Etalase Produk</a>
+                <a href="#tambah-produk" class="hover:text-brand-600 transition-colors py-1 flex items-center gap-1.5 text-brand-700 font-semibold bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200">
+                    <i class="fa-solid fa-plus-circle text-brand-600"></i> Tambah Produk
+                </a>
+                <a href="#tentang" class="hover:text-brand-600 transition-colors py-1">Tentang Toko</a>
+                <a href="#lokasi" class="hover:text-brand-600 transition-colors py-1">Lokasi & Kontak</a>
+            </nav>
+
+            <!-- Quick Action / WA Button -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20bertanya%20mengenai%20produk%20tas" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs px-4 py-2.5 rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat CS Store</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#beranda" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Beranda</a>
+            <a href="#etalase" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Etalase Produk</a>
+            <a href="#tambah-produk" class="block py-2 text-brand-700 hover:text-brand-800 font-semibold border-b border-gray-50 flex items-center gap-2">
+                <i class="fa-solid fa-plus-circle"></i> Tambah Produk Baru
+            </a>
+            <a href="#tentang" class="block py-2 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-50">Tentang Toko</a>
+            <a href="#lokasi" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Lokasi & Kontak</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20bertanya" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm py-2.5 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp 082127938115</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative bg-gradient-to-br from-rose-50 via-white to-brand-50 py-12 md:py-20 overflow-hidden border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-800 font-semibold text-xs tracking-wide uppercase">
+                        <i class="fa-solid fa-sparkles text-brand-600"></i> Koleksi Tas Terbaru 2026
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Tampil Gaya & Elegan Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 to-amber-600">Vaginta Store</span>
+                    </h1>
+                    
+                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Pusat jual beli tas selempang, totebag, backpack, hingga handbag mewah kualitas terbaik di Tasikmalaya. Pilih tas impianmu, pesan mudah via WhatsApp atau pesan langsung secara praktis!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#etalase" class="w-full sm:w-auto bg-gradient-to-r from-brand-600 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>Lihat Katalog Produk</span>
+                        </a>
+                        <a href="#tambah-produk" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-plus text-brand-600"></i>
+                            <span>Tambah Stok Baru</span>
+                        </a>
+                    </div>
+
+                    <!-- Store Highlights -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-200/80 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">100%</span>
+                            <span class="text-xs text-gray-500 font-medium">Original & Quality</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">08-21</span>
+                            <span class="text-xs text-gray-500 font-medium">Buka Setiap Hari</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl font-bold text-brand-800">Fast</span>
+                            <span class="text-xs text-gray-500 font-medium">Respon WA & COD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Featured Image Banner -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse"></div>
+                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Vaginta Modern Bag Collection" class="w-full h-96 object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                                <span class="bg-amber-400 text-gray-900 font-bold text-xs px-2.5 py-1 rounded-md mb-2 inline-block">Best Seller</span>
+                                <h3 class="font-serif text-xl font-bold">Vaginta Exclusive Handbag</h3>
+                                <p class="text-xs text-gray-200 mt-1">Ready di toko Bungursari Tasikmalaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: ETALASE PRODUK -->
+        <section id="etalase" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-gray-200 pb-5">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Katalog Pilihan</span>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mt-1">Etalase Produk Tas</h2>
+                    <p class="text-sm text-gray-500 mt-1">Temukan koleksi tas kesukaanmu, siap kirim atau pesan via WhatsApp.</p>
+                </div>
+
+                <!-- Filter & Search Bar Controls -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <!-- Search Input -->
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" id="searchInput" placeholder="Cari nama tas..." class="pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 w-full sm:w-52 shadow-sm">
+                </div>
+
+                <!-- Stock Filter -->
+                <select id="stockStatusFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                    <option value="all">Semua Status Stok</option>
+                    <option value="available">Stok Tersedia (>0)</option>
+                    <option value="low">Stok Menipis (≤3)</option>
+                    <option value="empty">Stok Habis (0)</option>
+                </select>
+
+                <!-- Color Filter -->
+                <select id="colorFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                    <option value="all">Semua Warna</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Cokelat">Cokelat</option>
+                    <option value="Beige">Beige / Cream</option>
+                    <option value="Merah">Merah / Maroon</option>
+                    <option value="Lainnya">Warna Lain</option>
+                </select>
+
+                <!-- Quick Action: Clear Out of Stock Products -->
+                <button onclick="clearOutOfStockProducts()" title="Hapus semua barang dengan stok 0 dari etalase" class="bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 font-semibold px-3 py-2 rounded-xl text-sm transition flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap">
+                    <i class="fa-solid fa-trash-can text-rose-600"></i>
+                    <span class="hidden lg:inline">Hapus Stok Habis</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid Container -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Products will be dynamically populated via JavaScript -->
+        </div>
+
+                    <!-- Color Filter -->
+                    <select id="colorFilter" class="bg-white border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-700 shadow-sm">
+                        <option value="all">Semua Warna</option>
+                        <option value="Hitam">Hitam</option>
+                        <option value="Cokelat">Cokelat</option>
+                        <option value="Beige">Beige / Cream</option>
+                        <option value="Merah">Merah / Maroon</option>
+                        <option value="Lainnya">Warna Lain</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid Container -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Products will be dynamically populated via JavaScript -->
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="emptyProductState" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-gray-300 shadow-sm">
+                <i class="fa-solid fa-box-open text-5xl text-gray-300 mb-3"></i>
+                <h3 class="text-lg font-semibold text-gray-700">Tidak ada produk ditemukan</h3>
+                <p class="text-sm text-gray-500 mt-1">Coba sesuaikan kata kunci pencarian atau filter warna Anda.</p>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: FORM TAMBAH PRODUK BARU -->
+        <section id="tambah-produk" class="scroll-mt-24">
+            <div class="bg-gradient-to-br from-white to-brand-50/30 rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-100 rounded-full blur-2xl opacity-60 pointer-events-none"></div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 mb-3">
+                            <i class="fa-solid fa-square-plus text-xl"></i>
+                        </div>
+                        <h2 class="font-serif text-3xl font-bold text-gray-900">Tambah Produk Baru</h2>
+                        <p class="text-sm text-gray-600 mt-1">Masukkan rincian tas untuk langsung menambahkannya ke Etalase Toko Vaginta.</p>
+                    </div>
+
+                    <form id="addProductForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Nama Produk -->
+                            <div class="sm:col-span-2">
+                                <label for="prodName" class="block text-sm font-semibold text-gray-700 mb-1.5">Nama Tas / Produk <span class="text-rose-500">*</span></label>
+                                <input type="text" id="prodName" required placeholder="Contoh: Vaginta Handbag Elegant Black" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Harga Produk -->
+                            <div>
+                                <label for="prodPrice" class="block text-sm font-semibold text-gray-700 mb-1.5">Harga Produk (Rp) <span class="text-rose-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 font-medium text-sm">Rp</span>
+                                    <input type="number" id="prodPrice" min="1000" required placeholder="250000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                </div>
+                            </div>
+
+                            <!-- Warna Produk -->
+                            <div>
+                                <label for="prodColor" class="block text-sm font-semibold text-gray-700 mb-1.5">Warna Produk <span class="text-rose-500">*</span></label>
+                                <input type="text" id="prodColor" required placeholder="Contoh: Hitam, Cokelat, Nude" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Stok Produk -->
+                            <div>
+                                <label for="prodStock" class="block text-sm font-semibold text-gray-700 mb-1.5">Jumlah Stok <span class="text-rose-500">*</span></label>
+                                <input type="number" id="prodStock" min="1" required value="10" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                            </div>
+
+                            <!-- Deskripsi Singkat -->
+                            <div>
+                                <label for="prodCategory" class="block text-sm font-semibold text-gray-700 mb-1.5">Kategori Tas</label>
+                                <select id="prodCategory" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                    <option value="Tas Selempang">Tas Selempang (Sling Bag)</option>
+                                    <option value="Totebag">Totebag Modern</option>
+                                    <option value="Handbag">Handbag Elegant</option>
+                                    <option value="Backpack">Backpack / Ransel</option>
+                                    <option value="Luxury">Luxury Bag</option>
+                                    <option value="Clutch">Clutch & Wallet</option>
+                                </select>
+                            </div>
+
+                            <!-- Link Gambar URL -->
+                            <div class="sm:col-span-2">
+                                <label for="prodImage" class="block text-sm font-semibold text-gray-700 mb-1.5">URL Foto Tas <span class="text-rose-500">*</span></label>
+                                <input type="url" id="prodImage" required placeholder="https://images.unsplash.com/photo-..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm bg-white shadow-sm transition">
+                                
+                                <!-- Preset Photos Helper -->
+                                <div class="mt-3">
+                                    <span class="text-xs font-semibold text-gray-500 block mb-2">Atau pilih dari preset foto tas Unsplash berikut:</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👜 Leather Tote
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👛 Red Clutch/Sling
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            🎒 Chic Backpack
+                                        </button>
+                                        <button type="button" onclick="setPresetImg('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80')" class="text-xs bg-gray-100 hover:bg-brand-100 hover:text-brand-800 text-gray-700 px-2.5 py-1.5 rounded-lg border border-gray-200 transition">
+                                            👝 Luxury Shoulder
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4 text-center">
+                            <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-brand-600 via-brand-700 to-brand-800 hover:from-brand-700 hover:to-brand-900 text-white font-bold px-10 py-3.5 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 transition duration-300">
+                                <i class="fa-solid fa-check-circle mr-2"></i> Simpan & Simulasikan Tampil Produk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 3: TENTANG TOKO VAGINTA -->
+        <section id="tentang" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-sm">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Tentang Kami</span>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mt-1 mb-4">Vaginta Bag Store</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                        <strong>Vaginta</strong> merupakan pusat fashion tas pilihan di Tasikmalaya yang melayani jual beli tas wanita & pria dengan berbagai tren terkini. Kami mengutamakan kualitas bahan, kerapian jahitan, serta desain yang stylish untuk menunjang penampilan harian, acara formal, maupun hangout.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
+                        Kami siap melayani pembelian secara langsung di toko fisik kami di Tasikmalaya, maupun pengiriman daring melalui layanan pesan praktis via WhatsApp dan kemudahan transaksi digital.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-brand-50 border border-brand-100">
+                            <i class="fa-solid fa-store text-brand-600 text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Toko Fisik Luring</h4>
+                            <p class="text-xs text-gray-500">Bisa langsung datang & cek barang</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50 border border-amber-100">
+                            <i class="fa-solid fa-wallet text-amber-600 text-xl mb-1"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Pembayaran Mudah</h4>
+                            <p class="text-xs text-gray-500">Cash, G-Pay / GoPay, & DANA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Suasana Toko Tas Vaginta" class="rounded-2xl shadow-md w-full h-80 object-cover">
+                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 hidden sm:flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-gray-900">Garansi Kualitas</span>
+                            <span class="text-[11px] text-gray-500">Pengecekan sebelum dikirim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 4: LOKASI & KONTAK TOKO -->
+        <section id="lokasi" class="scroll-mt-24">
+            <div class="bg-dark-800 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div>
+                            <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Informasi Kontak & Alamat</span>
+                            <h2 class="font-serif text-3xl font-bold mt-1">Kunjungi Toko Vaginta</h2>
+                            <p class="text-gray-400 text-sm mt-2">Kami menyambut kedatangan Anda untuk melihat langsung koleksi tas berkualitas tinggi di toko kami.</p>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <!-- Alamat -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-brand-600/30 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-map-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Alamat Lengkap Toko</h4>
+                                    <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">
+                                        Jalan Bantarsari, Kecamatan Bungursari, Kota Tasikmalaya, Jawa Barat.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Jam Operasional -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-amber-600/30 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-regular fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Jam Operasional</h4>
+                                    <p class="text-amber-300 font-medium text-xs mt-0.5">
+                                        Buka Setiap Hari: 08.00 - 21.00 WIB
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Phone & WA -->
+                            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600/30 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">WhatsApp / Telepon</h4>
+                                    <p class="text-emerald-400 font-bold text-sm mt-0.5">
+                                        082127938115
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="https://wa.me/6282127938115?text=Halo%20Vaginta%20Store,%20saya%20ingin%20menanyakan%20lokasi%20toko" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl transition text-sm">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Hubungi CS via WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Map Card Graphic / Simulation -->
+                    <div class="lg:col-span-6 bg-dark-900 p-5 rounded-2xl border border-white/10 text-center relative">
+                        <div class="h-64 rounded-xl bg-gray-800 relative overflow-hidden flex flex-col items-center justify-center p-4 text-center">
+                            <!-- Background Map Aesthetic Grid -->
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            
+                            <div class="relative z-10 space-y-3">
+                                <div class="w-14 h-14 bg-rose-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg animate-bounce">
+                                    <i class="fa-solid fa-shop text-2xl"></i>
+                                </div>
+                                <h3 class="font-serif text-lg font-bold text-white">Vaginta Store Tasikmalaya</h3>
+                                <p class="text-xs text-gray-400 max-w-xs mx-auto">Jl. Bantarsari, Kec. Bungursari, Kota Tasikmalaya, Jawa Barat</p>
+                                
+                                <a href="https://maps.google.com/?q=Bungursari+Tasikmalaya" target="_blank" class="inline-block text-xs bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg border border-white/20 transition mt-2">
+                                    <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 text-sm mt-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-3">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider">VAGINTA</span>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Toko tas terpercaya dengan beragam koleksi fashion trendy, elegan, dan harga bersahabat di Kota Tasikmalaya.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Menu Pintas</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#etalase" class="hover:text-white transition">Etalase Produk</a></li>
+                        <li><a href="#tambah-produk" class="hover:text-white transition">Tambah Produk Baru</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Tentang Toko</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Metode Pembayaran</h4>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="bg-gray-800 text-emerald-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-money-bill-wave mr-1"></i> Cash / COD</span>
+                        <span class="bg-gray-800 text-sky-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-wallet mr-1"></i> G-Pay / GoPay</span>
+                        <span class="bg-gray-800 text-blue-400 px-2.5 py-1 rounded border border-gray-700"><i class="fa-solid fa-credit-card mr-1"></i> DANA</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Layanan Pelanggan</h4>
+                    <p class="text-xs text-gray-400 mb-2">Punya pertanyaan seputar tas & pesanan?</p>
+                    <a href="https://wa.me/6282127938115" target="_blank" class="text-emerald-400 hover:underline font-bold text-sm block">
+                        <i class="fa-brands fa-whatsapp text-base mr-1"></i> 082127938115
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 Vaginta Store Tasikmalaya. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL SIMULASI PEMBAYARAN -->
+    <div id="paymentModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8 transform transition-all">
+            
+            <!-- Close Modal Button -->
+            <button onclick="closePaymentModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 bg-gray-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mx-auto mb-2">
+                    <i class="fa-solid fa-cash-register text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900">Simulasi Pembayaran</h3>
+                <p class="text-xs text-gray-500">Toko Vaginta Tasikmalaya</p>
+            </div>
+
+            <!-- Detail Ringkasan Produk Modal -->
+            <div id="modalProductDetails" class="bg-gray-50 p-4 rounded-2xl border border-gray-200 mb-6 flex gap-4 items-center">
+                <img id="modalProdImg" src="" alt="" class="w-16 h-16 object-cover rounded-xl border border-gray-200">
+                <div class="flex-grow">
+                    <h4 id="modalProdName" class="font-bold text-sm text-gray-900 line-clamp-1">Nama Produk</h4>
+                    <p id="modalProdMeta" class="text-xs text-gray-500">Warna: - | Stok: -</p>
+                    <div class="text-brand-700 font-bold text-sm mt-1" id="modalProdPrice">Rp 0</div>
+                </div>
+            </div>
+
+            <!-- Pilih Metode Pembayaran -->
+            <div class="space-y-4 mb-6">
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">Pilih Metode Pembayaran</label>
+                
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- Cash / Transfer -->
+                    <button type="button" onclick="selectPaymentMethod('cash')" id="btnMethodCash" class="pay-method-btn p-3 rounded-xl border-2 border-brand-600 bg-brand-50 text-brand-800 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-money-bill-wave text-lg"></i>
+                        <span class="text-xs font-bold">Cash / COD</span>
+                    </button>
+
+                    <button type="button" onclick="selectPaymentMethod('gpay')" id="btnMethodGpay" class="pay-method-btn p-3 rounded-xl border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-wallet text-lg text-sky-600"></i>
+                        <span class="text-xs font-bold">G-Pay / GoPay</span>
+                    </button>
+
+                    <button type="button" onclick="selectPaymentMethod('dana')" id="btnMethodDana" class="pay-method-btn p-3 rounded-xl border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-center transition flex flex-col items-center justify-center gap-1">
+                        <i class="fa-solid fa-mobile-screen text-lg text-blue-600"></i>
+                        <span class="text-xs font-bold">DANA</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Box Instruksi Pembayaran Disesuaikan Dynamic -->
+            <div id="paymentInstructions" class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-xs text-amber-900 mb-6">
+                <div id="instructionContent">
+                    <!-- Dynamic Instruction text populated via JS -->
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2">
+                <button onclick="processSimulatedPayment()" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Konfirmasi Simulasi Pembayaran</span>
+                </button>
+                <button onclick="closePaymentModal()" class="w-full text-xs text-gray-500 hover:text-gray-800 py-2">
+                    Batal
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MODAL RECEIPT / STRUK HASIL BAYAR -->
+    <div id="receiptModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative text-center">
+            
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 text-2xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-gray-900">Pembayaran Sukses!</h3>
+            <p class="text-xs text-gray-500 mt-1">Simulasi transaksi berhasil diproses.</p>
+
+            <div class="bg-gray-50 border border-dashed border-gray-300 rounded-2xl p-4 my-5 text-left text-xs space-y-2 font-mono">
+                <div class="text-center font-bold font-sans border-b border-gray-200 pb-2 text-gray-800">
+                    STORE VAGINTA TASIKMALAYA
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">ID Trx:</span>
+                    <span id="rcpId" class="font-bold">VG-98115</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Produk:</span>
+                    <span id="rcpName" class="font-bold text-right truncate max-w-[150px]">Tas</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Metode:</span>
+                    <span id="rcpMethod" class="font-bold text-emerald-600">Cash / COD</span>
+                </div>
+                <div class="flex justify-between border-t border-gray-200 pt-2 text-sm font-bold font-sans text-gray-900">
+                    <span>Total Bayar:</span>
+                    <span id="rcpTotal" class="text-brand-700">Rp 0</span>
+                </div>
+            </div>
+
+            <p class="text-[11px] text-gray-500 mb-5">
+                Struk ini merupakan bukti simulasi. Anda juga dapat melanjutkan konfirmasi langsung ke pengelola toko via WhatsApp.
+            </p>
+
+            <div class="space-y-2">
+                <a id="rcpWaBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl block text-xs shadow transition">
+                    <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Kirim Bukti ke WhatsApp Toko
+                </a>
+                <button onclick="closeReceiptModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2.5 rounded-xl text-xs transition">
+                    Tutup
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Produk Default Awal Toko Vaginta
+        let products = [
+            {
+                id: 1,
+                name: "Vaginta Luxury Sling Bag",
+                price: 245000,
+                color: "Hitam",
+                stock: 8,
+                category: "Tas Selempang",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                name: "Vaginta Classy Leather Handbag",
+                price: 320000,
+                color: "Cokelat",
+                stock: 2, // Stok menipis
+                category: "Handbag",
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                name: "Vaginta Urban Everyday Totebag",
+                price: 175000,
+                color: "Beige",
+                stock: 0, // Stok habis
+                category: "Totebag",
+                image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                name: "Vaginta Glamour Party Clutch",
+                price: 210000,
+                color: "Merah",
+                stock: 4,
+                category: "Clutch",
+                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                name: "Vaginta Aesthetic Casual Backpack",
+                price: 285000,
+                color: "Hitam",
+                stock: 6,
+                category: "Backpack",
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 6,
+                name: "Vaginta Minimalist Nude Shoulder Bag",
+                price: 195000,
+                color: "Beige",
+                stock: 0, // Stok habis
+                category: "Tas Selempang",
+                image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Global Variable untuk Active Selected Product untuk Modal
+        let activeProductForPayment = null;
+        let selectedMethod = 'cash';
+
+        // Format angka ke Rupiah
+        function formatRupiah(amount) {
+            return 'Rp ' + amount.toLocaleString('id-ID');
+        }
+
+        // Render Etalase Produk
+        function renderProducts(filteredProducts = null) {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyProductState');
+            const dataToRender = filteredProducts || products;
+
+            grid.innerHTML = '';
+
+            if (dataToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                
+                dataToRender.forEach(product => {
+                    const isOutOfStock = product.stock <= 0;
+                    const isLowStock = product.stock > 0 && product.stock <= 3;
+
+                    // Badge Keterangan Stok
+                    let stockBadge = '';
+                    if (isOutOfStock) {
+                        stockBadge = `<span class="bg-rose-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-circle-xmark"></i> Stok Habis (0)
+                        </span>`;
+                    } else if (isLowStock) {
+                        stockBadge = `<span class="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 animate-pulse">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Stok Menipis (${product.stock})
+                        </span>`;
+                    } else {
+                        stockBadge = `<span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> Stok Ready (${product.stock})
+                        </span>`;
+                    }
+
+                    const waText = encodeURIComponent(`Halo Vaginta Store, saya berminat memesan tas:\n\n*Nama Produk:* ${product.name}\n*Warna:* ${product.color}\n*Harga:* ${formatRupiah(product.price)}\n\nApakah stok masih tersedia?`);
+                    const waLink = `https://wa.me/6282127938115?text=${waText}`;
+
+                    const cardHtml = `
+                        <div class="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group relative ${isOutOfStock ? 'opacity-80' : ''}">
+                            
+                            <!-- Delete Product Button (Quick Manage) -->
+                            <button onclick="deleteProduct(${product.id})" title="Hapus produk dari etalase" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-red-600/90 hover:bg-red-700 text-white flex items-center justify-center shadow-md transition transform hover:scale-110">
+                                <i class="fa-solid fa-trash-can text-xs"></i>
+                            </button>
+
+                            <!-- Image Container -->
+                            <div class="relative h-64 overflow-hidden bg-gray-100">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${isOutOfStock ? 'grayscale opacity-75' : ''}" onerror="this.src='https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'">
+                                
+                                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">
+                                    <i class="fa-solid fa-tag text-brand-600 mr-1"></i> ${product.category || 'Tas Premium'}
+                                </div>
+
+                                <div class="absolute bottom-3 left-3">
+                                    ${stockBadge}
+                                </div>
+                            </div>
+
+                            <!-- Content Info -->
+                            <div class="p-5 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between text-xs text-gray-500 mb-1">
+                                        <span class="flex items-center gap-1 font-medium text-gray-600">
+                                            <span class="w-2.5 h-2.5 rounded-full inline-block" style="background-color: ${getColorHex(product.color)}"></span>
+                                            Warna: ${product.color}
+                                        </span>
+                                    </div>
+                                    <h3 class="font-serif font-bold text-lg text-gray-900 group-hover:text-brand-700 transition-colors line-clamp-2">
+                                        ${product.name}
+                                    </h3>
+                                </div>
+
+                                <!-- Quick Stock Quantity Controls -->
+                                <div class="mt-3 p-2.5 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between text-xs">
+                                    <span class="font-semibold text-gray-600">Kelola Stok:</span>
+                                    <div class="flex items-center gap-2">
+                                        <button onclick="updateStock(${product.id}, -1)" class="w-7 h-7 rounded-lg bg-white border border-gray-300 text-gray-700 font-bold hover:bg-rose-50 hover:text-rose-600 hover:border-rose-300 flex items-center justify-center transition">
+                                            -
+                                        </button>
+                                        <span class="font-bold text-gray-800 w-6 text-center">${product.stock}</span>
+                                        <button onclick="updateStock(${product.id}, 1)" class="w-7 h-7 rounded-lg bg-white border border-gray-300 text-gray-700 font-bold hover:bg-emerald-50 hover:text-emerald-600 hover:border-emerald-300 flex items-center justify-center transition">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <div class="font-bold text-xl text-brand-800 mb-3">
+                                        ${formatRupiah(product.price)}
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="grid grid-cols-2 gap-2">
+                                        ${isOutOfStock ? `
+                                            <button disabled class="bg-gray-200 text-gray-400 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-not-allowed">
+                                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                                <span>Stok Habis</span>
+                                            </button>
+                                            <button disabled class="bg-gray-100 text-gray-400 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-not-allowed">
+                                                <i class="fa-solid fa-ban"></i>
+                                                <span>Tidak Tersedia</span>
+                                            </button>
+                                        ` : `
+                                            <a href="${waLink}" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                                <span>Order WA</span>
+                                            </a>
+                                            <button onclick="openPaymentModal(${product.id})" class="bg-brand-50 hover:bg-brand-100 text-brand-800 border border-brand-200 font-semibold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                                                <i class="fa-solid fa-credit-card text-brand-600"></i>
+                                                <span>Simulasi Bayar</span>
+                                            </button>
+                                        `}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += cardHtml;
+                });
+            }
+        }
+
+        // Quick Stock Update (+/-)
+        function updateStock(productId, change) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.stock = Math.max(0, product.stock + change);
+                filterProducts();
+            }
+        }
+
+        // Delete Single Product
+        function deleteProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            if (confirm(`Apakah Anda yakin ingin menghapus produk "${product.name}" dari etalase?`)) {
+                products = products.filter(p => p.id !== productId);
+                filterProducts();
+            }
+        }
+
+        // Clear All Out Of Stock Products
+        function clearOutOfStockProducts() {
+            const outOfStockCount = products.filter(p => p.stock === 0).length;
+            if (outOfStockCount === 0) {
+                alert('Saat ini tidak ada produk dengan stok habis (0).');
+                return;
+            }
+
+            if (confirm(`Ditemukan ${outOfStockCount} produk dengan stok habis (0). Hapus semua produk tersebut dari etalase?`)) {
+                products = products.filter(p => p.stock > 0);
+                filterProducts();
+            }
+        }
+
+        // Color Helper Method for Badge Dots
+        function getColorHex(colorName) {
+            const lower = colorName.toLowerCase();
+            if (lower.includes('hitam')) return '#18181b';
+            if (lower.includes('cokelat') || lower.includes('brown')) return '#854d0e';
+            if (lower.includes('beige') || lower.includes('cream')) return '#fde68a';
+            if (lower.includes('merah') || lower.includes('maroon')) return '#dc2626';
+            if (lower.includes('biru')) return '#2563eb';
+            return '#a1a1aa';
+        }
+
+        // Filter and Search Handler
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedColor = document.getElementById('colorFilter').value.toLowerCase();
+            const stockFilter = document.getElementById('stockStatusFilter').value;
+
+            const filtered = products.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchTerm) || p.color.toLowerCase().includes(searchTerm);
+                
+                let matchesColor = true;
+                if (selectedColor !== 'all') {
+                    matchesColor = p.color.toLowerCase().includes(selectedColor);
+                }
+
+                let matchesStock = true;
+                if (stockFilter === 'available') {
+                    matchesStock = p.stock > 0;
+                } else if (stockFilter === 'low') {
+                    matchesStock = p.stock > 0 && p.stock <= 3;
+                } else if (stockFilter === 'empty') {
+                    matchesStock = p.stock === 0;
+                }
+
+                return matchesSearch && matchesColor && matchesStock;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // Function Preset Image URL
+        function setPresetImg(url) {
+            document.getElementById('prodImage').value = url;
+        }
+
+        // Form Tambah Produk Baru
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('prodName').value;
+            const price = parseInt(document.getElementById('prodPrice').value);
+            const color = document.getElementById('prodColor').value;
+            const stock = parseInt(document.getElementById('prodStock').value);
+            const category = document.getElementById('prodCategory').value;
+            const image = document.getElementById('prodImage').value;
+
+            const newProduct = {
+                id: Date.now(),
+                name,
+                price,
+                color,
+                stock,
+                category,
+                image
+            };
+
+            // Tambahkan di awal array
+            products.unshift(newProduct);
+            
+            // Reset Filter ke All agar produk baru terlihat
+            document.getElementById('stockStatusFilter').value = 'all';
+            document.getElementById('colorFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            
+            renderProducts();
+
+            // Reset Form & Scroll ke Etalase
+            this.reset();
+            alert(`Produk "${name}" telah berhasil ditambahkan ke etalase Toko Vaginta!`);
+            document.getElementById('etalase').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+        // MODAL SIMULASI PEMBAYARAN LOGIC
+        function openPaymentModal(productId) {
+            activeProductForPayment = products.find(p => p.id === productId);
+            if (!activeProductForPayment) return;
+
+            document.getElementById('modalProdImg').src = activeProductForPayment.image;
+            document.getElementById('modalProdName').innerText = activeProductForPayment.name;
+            document.getElementById('modalProdMeta').innerText = `Warna: ${activeProductForPayment.color} | Stok: ${activeProductForPayment.stock}`;
+            document.getElementById('modalProdPrice').innerText = formatRupiah(activeProductForPayment.price);
+
+            selectPaymentMethod('cash');
+
+            document.getElementById('paymentModal').classList.remove('hidden');
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.add('hidden');
+        }
+
+        function selectPaymentMethod(method) {
+            selectedMethod = method;
+
+            // Reset Styles
+            document.querySelectorAll('.pay-method-btn').forEach(btn => {
+                btn.classList.remove('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                btn.classList.add('border-gray-200', 'text-gray-700');
+            });
+
+            const instrBox = document.getElementById('instructionContent');
+
+            if (method === 'cash') {
+                document.getElementById('btnMethodCash').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-amber-900 mb-1"><i class="fa-solid fa-store mr-1"></i> Pembayaran Cash / Bayar di Toko (COD)</h5>
+                    <p class="leading-relaxed">Silakan datang langsung ke toko fisik Vaginta di <strong>Jalan Bantarsari, Kec. Bungursari, Kota Tasikmalaya</strong> atau bayar saat COD ditempat.</p>
+                `;
+            } else if (method === 'gpay') {
+                document.getElementById('btnMethodGpay').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-sky-900 mb-1"><i class="fa-solid fa-wallet mr-1"></i> Transfer via G-Pay / GoPay</h5>
+                    <p class="leading-relaxed">Nomor E-Wallet GoPay / G-Pay: <strong class="text-sky-700 text-sm">082127938115</strong></p>
+                    <p class="text-[11px] text-gray-600 mt-1">Atas Nama: <strong>Vaginta Store Tasikmalaya</strong></p>
+                `;
+            } else if (method === 'dana') {
+                document.getElementById('btnMethodDana').classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+                instrBox.innerHTML = `
+                    <h5 class="font-bold text-sm text-blue-900 mb-1"><i class="fa-solid fa-mobile-screen mr-1"></i> Transfer via DANA</h5>
+                    <p class="leading-relaxed">Nomor Akun DANA: <strong class="text-blue-700 text-sm">082127938115</strong></p>
+                    <p class="text-[11px] text-gray-600 mt-1">Atas Nama: <strong>Vaginta Store Tasikmalaya</strong></p>
+                `;
+            }
+        }
+
+        function processSimulatedPayment() {
+            if (!activeProductForPayment) return;
+
+            const randomTrxId = 'VG-' + Math.floor(10000 + Math.random() * 90000);
+            
+            document.getElementById('rcpId').innerText = randomTrxId;
+            document.getElementById('rcpName').innerText = activeProductForPayment.name;
+            document.getElementById('rcpTotal').innerText = formatRupiah(activeProductForPayment.price);
+            
+            let methodLabel = 'Cash / Bayar di Toko';
+            if (selectedMethod === 'gpay') methodLabel = 'G-Pay / GoPay (082127938115)';
+            if (selectedMethod === 'dana') methodLabel = 'DANA (082127938115)';
+            document.getElementById('rcpMethod').innerText = methodLabel;
+
+            // WhatsApp link untuk kirim struk
+            const waMsg = encodeURIComponent(`Halo Vaginta Store, saya telah melakukan simulasi pembayaran:\n\n*ID Transaksi:* ${randomTrxId}\n*Produk:* ${activeProductForPayment.name}\n*Warna:* ${activeProductForPayment.color}\n*Total:* ${formatRupiah(activeProductForPayment.price)}\n*Metode:* ${methodLabel}\n\nMohon konfirmasinya. Terima kasih!`);
+            document.getElementById('rcpWaBtn').href = `https://wa.me/6282127938115?text=${waMsg}`;
+
+            closePaymentModal();
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+        }
+
+
+        // Event Listeners Initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render Initial Products
+            renderProducts();
+
+            // Search & Filter Listeners
+            document.getElementById('searchInput').addEventListener('input', filterProducts);
+            document.getElementById('colorFilter').addEventListener('change', filterProducts);
+            document.getElementById('stockStatusFilter').addEventListener('change', filterProducts);
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking nav items
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+      </html>
+</body>
+                                                               </html>
